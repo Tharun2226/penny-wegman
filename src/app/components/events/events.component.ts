@@ -86,12 +86,7 @@ export class EventsComponent {
       description: 'Engaging with young voters',
       count: 2
     },
-    {
-      icon: '🎉',
-      title: 'Rallies',
-      description: 'Campaign rallies and celebrations',
-      count: 4
-    }
+   
   ];
 
   pastEvents: PastEvent[] = [

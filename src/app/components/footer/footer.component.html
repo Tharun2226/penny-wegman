@@ -1,56 +1,47 @@
-<footer class="footer">
+<footer class="footer" aria-label="Site Footer">
   <div class="footer-container">
     <div class="footer-content">
-      <div class="footer-section">
-        <h3>PennyWegman</h3>
-        <p>Transforming businesses through innovative technology solutions. We help companies achieve their digital transformation goals with cutting-edge tools and expertise.</p>
-        <div class="social-links">
-          <a href="#" class="social-link">📘</a>
-          <a href="#" class="social-link">🐦</a>
-          <a href="#" class="social-link">📷</a>
-          <a href="#" class="social-link">💼</a>
+      <div class="footer-section footer-brand">
+        <h3>Penny Wegman</h3>
+        <p class="footer-tagline">Candidate for Kane County Treasurer</p>
+        <p class="footer-mission">Transparent and efficient leadership to strengthen public trust in Kane County government.</p>
+        <div class="social-links" aria-label="Social Media Links">
+          <a href="https://www.facebook.com/people/Friends-of-Penny-Wegman/100068944608632/" target="_blank" class="social-link" aria-label="Facebook">
+            <fa-icon [icon]="faFacebook"></fa-icon>
+          </a>
+          <a href="https://www.linkedin.com/in/penny-wegman-22a21659/" target="_blank" class="social-link" aria-label="LinkedIn">
+            <fa-icon [icon]="faLinkedin"></fa-icon>
+          </a>
         </div>
       </div>
-      
-      <div class="footer-section">
+      <nav class="footer-section footer-links" aria-label="Quick Links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/about">About</a></li>
+          <li><a routerLink="/news">News</a></li>
+          <li><a routerLink="/how-to-vote">How to Vote</a></li>
+          <li><a routerLink="/donate">Donate</a></li>
+          <li><a routerLink="/contact">Contact</a></li>
         </ul>
-      </div>
-      
-      <div class="footer-section">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#">Web Development</a></li>
-          <li><a href="#">Mobile Apps</a></li>
-          <li><a href="#">Cloud Solutions</a></li>
-          <li><a href="#">Consulting</a></li>
-          <li><a href="#">Support</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-section">
+      </nav>
+      <div class="footer-section footer-contact">
         <h4>Contact Info</h4>
-        <div class="contact-info">
-          <p>📍 123 Innovation Street, Tech City</p>
-          <p>📧 hello&#64;pennywegman.com</p>
-          <p>📞 +1 (555) 123-4567</p>
-        </div>
+        <ul class="contact-info">
+          <li><fa-icon [icon]="faPhone"></fa-icon> <a href="tel:224-402-9887">224-402-9887</a></li>
+          <li><fa-icon [icon]="faEnvelope"></fa-icon> <a href="mailto:pennywegman&#64;gmail.com">pennywegman&#64;gmail.com</a></li>
+          <li><fa-icon [icon]="faLinkedin"></fa-icon> <a href="https://www.linkedin.com/in/penny-wegman-22a21659/" target="_blank">Penny Wegman</a></li>
+          <li><fa-icon [icon]="faFacebook"></fa-icon> <a href="https://www.facebook.com/people/Friends-of-Penny-Wegman/100068944608632/" target="_blank">Friends of Penny Wegman</a></li>
+        </ul>
       </div>
     </div>
-    
     <div class="footer-bottom">
-      <p>&copy; 2024 PennyWegman. All rights reserved.</p>
-      <div class="footer-links">
+      <p class="footer-copyright">&copy; 2024 Penny Wegman. All rights reserved.</p>
+      <nav class="footer-policies" aria-label="Footer Policies">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
         <a href="#">Cookie Policy</a>
-      </div>
+      </nav>
     </div>
   </div>
 </footer>

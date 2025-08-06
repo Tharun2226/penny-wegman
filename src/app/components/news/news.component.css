@@ -1,5 +1,5 @@
 .news-page {
-  padding: 120px 0 5rem 0;
+  padding: 100px 0 3rem 0;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   min-height: 100vh;
 }
@@ -12,15 +12,141 @@
 
 .section-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .section-header h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #2d3748;
   margin-bottom: 1rem;
 }
+
+.featured-article {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  margin-bottom: 2rem;
+}
+
+.featured-article:last-child {
+  margin-bottom: 1.5rem;
+}
+
+.article-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-content {
+  padding: 1.25rem;
+}
+
+.article-date {
+  color: #666;
+  font-size: 0.85rem;
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+.article-text {
+  line-height: 1.6;
+  color: #2d3748;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.article-quote {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f7fafc;
+  border-left: 3px solid #3182ce;
+  text-align: center;
+}
+
+.read-more {
+  color: #3182ce;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.read-more:hover {
+  color: #2c5282;
+  transform: translateX(5px);
+}
+
+.article-quote blockquote {
+  margin: 0;
+  color: #2d3748;
+}
+
+.achievement-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.achievement-list li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+  color: #4a5568;
+}
+
+.achievement-list li:before {
+  content: "✓";
+  color: #3182ce;
+  position: absolute;
+  left: 0;
+}
+
+.campaign-vision {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.vision-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.vision-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: #f7fafc;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.vision-item:hover {
+  transform: translateY(-5px);
+}
+
+.vision-item h3 {
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.vision-item p {
+  color: #4a5568;
+  line-height: 1.6;
+}
+ 
 
 .section-header p {
   font-size: 1.2rem;
@@ -62,8 +188,7 @@
 }
 
 .article-image {
-  width: 200px;
-  height: 150px;
+
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 12px;
   display: flex;

@@ -7,15 +7,20 @@
     
     <div class="vote-content">
       <div class="vote-steps">
-        <h2>Voting Process</h2>
-        <div class="steps-grid">
-          <div class="step-item" *ngFor="let step of votingSteps; let i = index">
-            <div class="step-number">{{ i + 1 }}</div>
-            <div class="step-content">
-              <h3>{{ step.title }}</h3>
-              <p>{{ step.description }}</p>
+        <div class="vote-steps-content">
+          <h2>Voting Process</h2>
+          <div class="steps-grid">
+            <div class="step-item" *ngFor="let step of votingSteps; let i = index">
+              <div class="step-number">{{ i + 1 }}</div>
+              <div class="step-content">
+                <h3>{{ step.title }}</h3>
+                <p>{{ step.description }}</p>
+              </div>
             </div>
           </div>
+        </div>
+        <div class="vote-steps-image">
+          <img src="assets/2.png" alt="Voting Process" class="voting-process-image">
         </div>
       </div>
       

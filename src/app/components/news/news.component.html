@@ -1,56 +1,99 @@
 <section class="news-page">
   <div class="news-container">
     <div class="section-header">
-      <h1>Campaign News</h1>
-      <p>Stay updated with the latest news and updates from Penny Wegman's campaign.</p>
+      <h1>Latest News</h1>
+      <p>Stay informed about Penny Wegman's campaign and community involvement</p>
     </div>
     
     <div class="news-content">
       <div class="featured-news">
-        <h2>Featured Story</h2>
+        <h2>Recent Headlines</h2>
         <div class="featured-article">
           <div class="article-image">
-            <span>📰</span>
+            <img src="assets/4.jpg" alt="Daily Herald Endorsement">
           </div>
           <div class="article-content">
-            <span class="article-date">October 15, 2024</span>
-            <h3>Penny Wegman Announces Comprehensive Education Reform Plan</h3>
-            <p>Today, Penny Wegman unveiled her comprehensive plan to reform our education system, focusing on increased funding for public schools, teacher support, and student success programs.</p>
-            <a href="#" class="read-more">Read Full Article →</a>
+            <span class="article-date">October 17, 2024</span>
+            <h3>Daily Herald Endorses Penny Wegman</h3>
+            <p class="article-text">In the Nov. 5 election for Kane County Treasurer, Republican Gretchen Butler is challenging incumbent Democrat Penny Wegman. Wegman, seeking a second term, highlights her experience as county auditor since 2020 and her MBA. Butler emphasizes her 25 years of business experience, including managing finances in her own hardware store. Both candidates stress the need for independence in the auditor's role. Butler aims to cut costs and improve efficiency if elected. Wegman, during her term, improved transparency, launched new initiatives, and won an innovation award. While Butler is qualified, Wegman's proven record earns her the endorsement.</p>
+            <div class="article-quote">
+              <blockquote>
+                <a href="https://archive.ph/2024.10.17-134933/https://www.dailyherald.com/20241017/endorsements/endorsement-penny-wegman-for-kane-auditor/" target="_blank" class="read-more">
+                  Read Full Article on Daily Herald →
+                </a>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div class="featured-article">
+          <div class="article-image">
+            <img src="assets/6.png" alt="Penny Wegman receives international award">
+          </div>
+          <div class="article-content">
+            <span class="article-date">July 30, 2024</span>
+            <h3>Candidate for Kane County Treasurer Penny Wegman receives international award</h3>
+            <p class="article-text">Candidate for Kane County Treasurer Penny Wegman recently received the Innovator Award from the International Association of Government Officials at the annual conference in New Orleans. The award recognized Wegman's work for the Kane County Procurement Card Program. Procurement cards – known as p-cards – are credit cards issued to department heads and office holders.</p>
+            <div class="article-quote">
+              <blockquote>
+                <a href="https://www.shawlocal.com/kane-county-chronicle/2024/07/30/kane-auditor-penny-wegman-receives-national-award/?utm_campaign=snd-autopilot&utm_medium=social&utm_source=facebook_KaneCountyChronicle" target="_blank" class="read-more">
+                  Read Full Article on Kane County Chronicle →
+                </a>
+              </blockquote>
+            </div>
           </div>
         </div>
       </div>
       
       <div class="news-grid">
-        <h2>Latest Updates</h2>
+        <h2>Key Accomplishments & Updates</h2>
         <div class="articles-grid">
-          <article class="news-article" *ngFor="let article of newsArticles">
-            <div class="article-image">
-              <span>{{ article.icon }}</span>
-            </div>
+          <article class="news-article">
             <div class="article-content">
-              <span class="article-date">{{ article.date }}</span>
-              <h3>{{ article.title }}</h3>
-              <p>{{ article.excerpt }}</p>
-              <a href="#" class="read-more">Read More →</a>
+              <h3>Experience & Leadership</h3>
+              <ul class="achievement-list">
+                <li>Current Kane County Supervisor of Assessments</li>
+                <li>MBA Graduate with Honors</li>
+                <li>Certified Illinois Assessment Officer</li>
+                <li>Licensed Real Estate Broker</li>
+              </ul>
+            </div>
+          </article>
+          
+          <article class="news-article">
+            <div class="article-content">
+              <h3>Community Service</h3>
+              <ul class="achievement-list">
+                <li>Kane County Board Commissioner</li>
+                <li>Kane County Forest Preserve Treasurer</li>
+                <li>Vice-Chair of Kane County Democratic Women</li>
+                <li>Former Gail Borden Library Trustee</li>
+                <li>Former Kane County Regional School Board President</li>
+              </ul>
             </div>
           </article>
         </div>
       </div>
       
-      <div class="campaign-updates">
-        <h2>Campaign Updates</h2>
-        <div class="updates-list">
-          <div class="update-item" *ngFor="let update of campaignUpdates">
-            <div class="update-icon">{{ update.icon }}</div>
-            <div class="update-content">
-              <h4>{{ update.title }}</h4>
-              <p>{{ update.description }}</p>
-              <span class="update-time">{{ update.time }}</span>
-            </div>
+      <div class="campaign-vision">
+        <h2>Campaign Vision</h2>
+        <div class="vision-content">
+          <div class="vision-item">
+            <h3>Transparency</h3>
+            <p>Committed to maintaining complete transparency in all financial operations and public records.</p>
+          </div>
+          <div class="vision-item">
+            <h3>Efficiency</h3>
+            <p>Implementing modern technologies and streamlined processes to better serve Kane County residents.</p>
+          </div>
+          <div class="vision-item">
+            <h3>Community Focus</h3>
+            <p>Dedicated to serving all Kane County residents with equal attention and respect.</p>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+          </div>
+      </div>
+    
+ 
 </section>

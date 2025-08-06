@@ -42,11 +42,7 @@
               <h4>Public Awareness</h4>
               <p>Raising awareness about important community issues</p>
             </div>
-            <div class="info-item">
-              <span class="icon">🤝</span>
-              <h4>Community Programs</h4>
-              <p>Funding local initiatives and community development</p>
-            </div>
+            
           </div>
         </div>
         
@@ -84,3 +80,31 @@
     </div>
   </div>
 </section>
+
+<!-- Thank You Modal -->
+<div class="modal" [class.show]="showThankYouModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <i class="fas fa-check-circle success-icon"></i>
+      <h2>Thank You for Your Support!</h2>
+    </div>
+    <div class="modal-body">
+      <p>Dear Supporter,</p>
+      <p>Thank you for your generous donation of <strong>${{ getSelectedAmount() }}</strong> to our campaign. Your support helps us continue our mission to bring transparent and efficient leadership to Kane County.</p>
+      <div class="share-section">
+        <p>Share your support:</p>
+        <div class="share-buttons">
+          <a href="https://www.facebook.com/people/Friends-of-Penny-Wegman/100068944608632/" target="_blank" class="share-btn facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/penny-wegman-22a21659/" target="_blank" class="share-btn linkedin">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="close-btn" (click)="closeThankYouModal()">Close</button>
+    </div>
+  </div>
+</div>

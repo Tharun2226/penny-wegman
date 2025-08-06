@@ -23,6 +23,7 @@ interface CampaignStats {
 export class DonateComponent {
   selectedAmount: number = 25;
   customAmount: number = 0;
+  showThankYouModal: boolean = false;
   
   donationAmounts: DonationAmount[] = [
     { value: 10, description: 'Supporter' },
@@ -39,12 +40,12 @@ export class DonateComponent {
     donors: 1250
   };
 
-  selectAmount(amount: number) {
+  selectAmount(amount: number): void {
     this.selectedAmount = amount;
     this.customAmount = 0;
   }
 
-  onCustomAmountChange() {
+  onCustomAmountChange(): void {
     if (this.customAmount > 0) {
       this.selectedAmount = 0;
     }
@@ -58,12 +59,23 @@ export class DonateComponent {
     return Math.round((this.campaignStats.raised / this.campaignStats.goal) * 100);
   }
 
-  processDonation() {
+  processDonation(): void {
     const amount = this.getSelectedAmount();
     if (amount > 0) {
-      alert(`Thank you for your donation of $${amount}! This is a demo - in a real application, this would redirect to a payment processor.`);
+      // Update campaign stats
+      this.campaignStats.raised += amount;
+      this.campaignStats.donors += 1;
+      
+      // Show thank you modal
+      this.showThankYouModal = true;
+      document.body.style.overflow = 'hidden';
     } else {
       alert('Please select or enter a donation amount.');
     }
+  }
+
+  closeThankYouModal(): void {
+    this.showThankYouModal = false;
+    document.body.style.overflow = 'auto';
   }
 }
