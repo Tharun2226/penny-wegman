@@ -1,0 +1,56 @@
+<section class="news-page">
+  <div class="news-container">
+    <div class="section-header">
+      <h1>Campaign News</h1>
+      <p>Stay updated with the latest news and updates from Penny Wegman's campaign.</p>
+    </div>
+    
+    <div class="news-content">
+      <div class="featured-news">
+        <h2>Featured Story</h2>
+        <div class="featured-article">
+          <div class="article-image">
+            <span>📰</span>
+          </div>
+          <div class="article-content">
+            <span class="article-date">October 15, 2024</span>
+            <h3>Penny Wegman Announces Comprehensive Education Reform Plan</h3>
+            <p>Today, Penny Wegman unveiled her comprehensive plan to reform our education system, focusing on increased funding for public schools, teacher support, and student success programs.</p>
+            <a href="#" class="read-more">Read Full Article →</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="news-grid">
+        <h2>Latest Updates</h2>
+        <div class="articles-grid">
+          <article class="news-article" *ngFor="let article of newsArticles">
+            <div class="article-image">
+              <span>{{ article.icon }}</span>
+            </div>
+            <div class="article-content">
+              <span class="article-date">{{ article.date }}</span>
+              <h3>{{ article.title }}</h3>
+              <p>{{ article.excerpt }}</p>
+              <a href="#" class="read-more">Read More →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+      
+      <div class="campaign-updates">
+        <h2>Campaign Updates</h2>
+        <div class="updates-list">
+          <div class="update-item" *ngFor="let update of campaignUpdates">
+            <div class="update-icon">{{ update.icon }}</div>
+            <div class="update-content">
+              <h4>{{ update.title }}</h4>
+              <p>{{ update.description }}</p>
+              <span class="update-time">{{ update.time }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

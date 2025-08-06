@@ -1,0 +1,74 @@
+<section class="vote-page">
+  <div class="vote-container">
+    <div class="section-header">
+      <h1>How to Vote</h1>
+      <p>Your voice matters! Here's everything you need to know about voting in the upcoming election.</p>
+    </div>
+    
+    <div class="vote-content">
+      <div class="vote-steps">
+        <h2>Voting Process</h2>
+        <div class="steps-grid">
+          <div class="step-item" *ngFor="let step of votingSteps; let i = index">
+            <div class="step-number">{{ i + 1 }}</div>
+            <div class="step-content">
+              <h3>{{ step.title }}</h3>
+              <p>{{ step.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="vote-requirements">
+        <h2>Voter Requirements</h2>
+        <div class="requirements-grid">
+          <div class="requirement-item" *ngFor="let req of voterRequirements">
+            <div class="requirement-icon">{{ req.icon }}</div>
+            <div>
+              <h4>{{ req.title }}</h4>
+              <p>{{ req.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="important-dates">
+        <h2>Important Dates</h2>
+        <div class="dates-grid">
+          <div class="date-item" *ngFor="let date of importantDates">
+            <div class="date-info">
+              <h4>{{ date.title }}</h4>
+              <p class="date">{{ date.date }}</p>
+              <p class="description">{{ date.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="voting-locations">
+        <h2>Voting Locations</h2>
+        <div class="locations-grid">
+          <div class="location-item" *ngFor="let location of votingLocations">
+            <h4>{{ location.name }}</h4>
+            <p class="address">{{ location.address }}</p>
+            <p class="hours">{{ location.hours }}</p>
+            <div class="location-type">{{ location.type }}</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="voter-resources">
+        <h2>Additional Resources</h2>
+        <div class="resources-grid">
+          <a href="#" class="resource-item" *ngFor="let resource of voterResources">
+            <div class="resource-icon">{{ resource.icon }}</div>
+            <div>
+              <h4>{{ resource.title }}</h4>
+              <p>{{ resource.description }}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

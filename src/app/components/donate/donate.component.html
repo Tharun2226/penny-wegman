@@ -1,0 +1,86 @@
+<section class="donate-page">
+  <div class="donate-container">
+    <div class="section-header">
+      <h1>Support Penny Wegman</h1>
+      <p>Your donation helps us continue our mission and make a difference in our community.</p>
+    </div>
+    
+    <div class="donate-content">
+      <div class="donation-options">
+        <h2>Choose Your Donation Amount</h2>
+        <div class="amount-grid">
+          <button class="amount-btn" *ngFor="let amount of donationAmounts" 
+                  [class.selected]="selectedAmount === amount.value"
+                  (click)="selectAmount(amount.value)">
+            <span class="amount">${{ amount.value }}</span>
+            <span class="description">{{ amount.description }}</span>
+          </button>
+        </div>
+        
+        <div class="custom-amount">
+          <label for="customAmount">Or enter a custom amount:</label>
+          <div class="input-group">
+            <span class="currency">$</span>
+            <input type="number" id="customAmount" 
+                   [(ngModel)]="customAmount" 
+                   placeholder="Enter amount"
+                   min="1"
+                   (input)="onCustomAmountChange()">
+          </div>
+        </div>
+        
+        <div class="donation-info">
+          <h3>What Your Donation Supports</h3>
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="icon">🎯</span>
+              <h4>Campaign Activities</h4>
+              <p>Supporting grassroots organizing and voter outreach</p>
+            </div>
+            <div class="info-item">
+              <span class="icon">📢</span>
+              <h4>Public Awareness</h4>
+              <p>Raising awareness about important community issues</p>
+            </div>
+            <div class="info-item">
+              <span class="icon">🤝</span>
+              <h4>Community Programs</h4>
+              <p>Funding local initiatives and community development</p>
+            </div>
+          </div>
+        </div>
+        
+        <button class="donate-btn" (click)="processDonation()">
+          Donate ${{ getSelectedAmount() }}
+        </button>
+        
+        <p class="disclaimer">
+          * All donations are secure and confidential. Your contribution helps support our mission.
+        </p>
+      </div>
+      
+      <div class="donation-stats">
+        <h3>Campaign Progress</h3>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <h4>${{ campaignStats.raised.toLocaleString() }}</h4>
+            <p>Raised</p>
+          </div>
+          <div class="stat-item">
+            <h4>${{ campaignStats.goal.toLocaleString() }}</h4>
+            <p>Goal</p>
+          </div>
+          <div class="stat-item">
+            <h4>{{ campaignStats.donors }}</h4>
+            <p>Donors</p>
+          </div>
+        </div>
+        
+        <div class="progress-bar">
+          <div class="progress-fill" [style.width.%]="getProgressPercentage()"></div>
+        </div>
+        <p class="progress-text">{{ getProgressPercentage() }}% of goal reached</p>
+      </div>
+    </div>
+  </div>
+</section>
