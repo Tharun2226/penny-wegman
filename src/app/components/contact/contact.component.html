@@ -9,37 +9,33 @@
       <div class="contact-info">
         <h3>Connect With Us</h3>
         <div class="contact-items">
+          <!-- Contact Info Items -->
           <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-phone"></i>
-            </div>
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
             <div class="contact-details">
               <h4>Phone</h4>
               <p><a href="tel:224-402-9887">224-402-9887</a></p>
             </div>
           </div>
+
           <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
             <div class="contact-details">
               <h4>Email</h4>
               <p><a href="mailto:pennywegman@gmail.com">pennywegman&#64;gmail.com</a></p>
             </div>
           </div>
+
           <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fab fa-facebook"></i>
-            </div>
+            <div class="contact-icon"><i class="fab fa-facebook"></i></div>
             <div class="contact-details">
               <h4>Facebook</h4>
               <p><a href="https://www.facebook.com/people/Friends-of-Penny-Wegman/100068944608632/" target="_blank">Friends of Penny Wegman</a></p>
             </div>
           </div>
+
           <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fab fa-linkedin"></i>
-            </div>
+            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
             <div class="contact-details">
               <h4>LinkedIn</h4>
               <p><a href="https://www.linkedin.com/in/penny-wegman-22a21659/" target="_blank">Penny Wegman</a></p>
@@ -47,70 +43,59 @@
           </div>
 
           <div class="social-buttons">
-            <a href="tel:224-402-9887" class="social-button phone">
-              <i class="fas fa-phone"></i>
-            </a>
-            <a href="mailto:pennywegman@gmail.com" class="social-button email">
-              <i class="fas fa-envelope"></i>
-            </a>
-            <a href="https://www.facebook.com/people/Friends-of-Penny-Wegman/100068944608632/" target="_blank" class="social-button facebook">
-              <i class="fab fa-facebook"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/penny-wegman-22a21659/" target="_blank" class="social-button linkedin">
-              <i class="fab fa-linkedin"></i>
-            </a>
+            <a href="tel:224-402-9887" class="social-button phone"><i class="fas fa-phone"></i></a>
+            <a href="mailto:pennywegman@gmail.com" class="social-button email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.facebook.com/people/Friends-of-Penny-Wegman/100068944608632/" target="_blank" class="social-button facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/penny-wegman-22a21659/" target="_blank" class="social-button linkedin"><i class="fab fa-linkedin"></i></a>
           </div>
         </div>
       </div>
       
+      <!-- Contact Form -->
       <div class="contact-form">
         <h3>Send a Message</h3>
-        <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <input type="text" 
-                   [(ngModel)]="messageForm.name" 
-                   name="name"
-                   placeholder="Your Name" 
-                   required 
-                   #name="ngModel"
-                   class="form-control">
-            <div class="error-message" *ngIf="name.invalid && (name.dirty || name.touched)">
-              Name is required
+                   formControlName="name"
+                   placeholder="Your Name *" 
+                   class="form-control"
+                   [class.error]="isFieldInvalid('name')">
+            <div class="error-message" *ngIf="isFieldInvalid('name')">
+              {{ getErrorMessage('name') }}
             </div>
           </div>
 
           <div class="form-group">
             <input type="email" 
-                   [(ngModel)]="messageForm.email" 
-                   name="email"
-                   placeholder="Your Email" 
-                   required 
-                   email
-                   #email="ngModel"
-                   class="form-control">
-            <div class="error-message" *ngIf="email.invalid && (email.dirty || email.touched)">
-              Please enter a valid email
+                   formControlName="email"
+                   placeholder="Your Email *" 
+                   class="form-control"
+                   [class.error]="isFieldInvalid('email')">
+            <div class="error-message" *ngIf="isFieldInvalid('email')">
+              {{ getErrorMessage('email') }}
             </div>
           </div>
 
           <div class="form-group">
             <input type="tel" 
-                   [(ngModel)]="messageForm.phone" 
-                   name="phone"
+                   formControlName="phone"
                    placeholder="Your Phone (optional)" 
-                   class="form-control">
+                   class="form-control"
+                   [class.error]="isFieldInvalid('phone')">
+            <div class="error-message" *ngIf="isFieldInvalid('phone')">
+              {{ getErrorMessage('phone') }}
+            </div>
           </div>
 
           <div class="form-group">
-            <textarea [(ngModel)]="messageForm.message" 
-                      name="message"
-                      placeholder="Your Message" 
-                      required
-                      #message="ngModel"
+            <textarea formControlName="message"
+                      placeholder="Your Message *" 
                       class="form-control"
+                      [class.error]="isFieldInvalid('message')"
                       rows="5"></textarea>
-            <div class="error-message" *ngIf="message.invalid && (message.dirty || message.touched)">
-              Message is required
+            <div class="error-message" *ngIf="isFieldInvalid('message')">
+              {{ getErrorMessage('message') }}
             </div>
           </div>
 
@@ -123,10 +108,21 @@
             {{ isSubmitting ? ' Sending...' : ' Send Message' }}
           </button>
         </form>
-
-        <div class="success-message" *ngIf="showSuccessMessage">
-          Thank you for your message! We'll get back to you soon.
-        </div>
       </div>
     </div>
+  </div>
 
+  <!-- Success Popup Overlay -->
+  <div class="success-popup-overlay" *ngIf="showSuccessPopup" (click)="closeSuccessPopup()">
+    <div class="success-popup" (click)="$event.stopPropagation()">
+      <div class="success-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h3>Message Sent Successfully!</h3>
+      <p>Thank you for your message. We'll get back to you soon.</p>
+      <button type="button" class="close-button" (click)="closeSuccessPopup()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+</section>
